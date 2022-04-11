@@ -1,0 +1,19 @@
+@import 'utilities/mixins',
+'utilities/variables';
+@import 'base/base',
+'base/reset';
+@import 'layout/header',
+'layout/main',
+'layout/footer',
+'layout/aside';
+@import 'components/nav-top',
+'components/sale-button',
+'components/nav-aside',
+'components/intro',
+'components/form',
+'components/form-sections',
+'components/filters',
+'components/seacrh-form-button',
+'components/card',
+'components/result-filtering',
+'components/form-firlters';

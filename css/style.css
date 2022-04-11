@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.sale {
+  font-size: 0.7rem;
+  padding: 0.15em 0.6em;
+  background-color: #0071ce;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.sale span {
+  font-size: 1.7rem;
+  font-weight: 300;
+  margin-right: 0.2em;
+}
+
+.intro {
+  padding-top: 0.5em;
+}
+.intro img {
+  width: 100%;
+  max-height: 550px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 0px 2px 7px #dbdbdb;
+  padding: 1em;
+}
+form legend {
+  font-size: 1.1rem;
+  margin-bottom: 2em;
+}
+form label {
+  font-weight: 500;
+}
+form input {
+  padding: 0.8em;
+  font-size: 1rem;
+  border: solid 1px #c8c8c8;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+}
+form input::placeholder {
+  font-weight: lighter;
+  color: #818181;
+}
+form input:disabled {
+  background-color: #ebecef;
+  border: solid 1px #e7e7e7;
+}
+
+.form-section {
+  padding: 0 1em;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter input {
+  width: 49%;
+}
+.filter .filters {
+  width: 49%;
+}
+
+.filter.an .filters ul {
+  overflow: scroll;
+  max-height: 194px;
+}
+
+.search-form-button {
+  padding: 1em;
+  font-weight: 600;
+  color: #fff;
+  background-color: #c82814;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px gray;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+.card img {
+  border-radius: 0.3em;
+  margin-right: 0.5em;
+}
+.card .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 130px;
+}
+.card .details span:nth-child(4) {
+  color: red;
+  font-weight: bold;
+}
+.card .details span:nth-child(1) {
+  font-weight: bold;
+}
+
+.filtering {
+  padding: 2em 1em;
+}
+
+.filters {
+  position: relative;
+}
+.filters input {
+  width: 100%;
+}
+.filters select {
+  outline: blue;
+  border: none;
+  width: 17px;
+  position: absolute;
+  right: 0.5em;
+  top: 1.2em;
+}
+
+/*# sourceMappingURL=style.css.map */
