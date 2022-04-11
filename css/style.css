@@ -9,6 +9,27 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.nav-top {
+  padding: 0.5em 0.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  list-style: none;
+  border-bottom: solid 1px #e0e0e0;
+}
+.nav-top li a svg {
+  width: 150px;
+}
+.nav-top li:nth-child(3) {
+  display: none;
+}
+.nav-top li i {
+  font-size: 1.6rem;
+  color: #0071ce;
+}
+
 .sale {
   font-size: 0.7rem;
   padding: 0.15em 0.6em;
