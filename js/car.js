@@ -1,9 +1,11 @@
 export default class Car {
-    constructor(id, model, brand, year, status, price) {
+
+    constructor(id, model, brand, year, km, status, price) {
         this.id = id;
         this.model = model;
         this.brand = brand;
         this.year = year;
+        this.km = km;
         this.status = status;
         this.price = price;
     }
@@ -31,7 +33,7 @@ export default class Car {
 
         <div class="details">
             <span>${this.brand} ${this.model}</span>
-            <span>${this.year} - 120 558km</span>
+            <span>${this.year} - ${this.km}</span>
             <span>${this.status}</span>
             <span>${this.price} EUR</span>
         </div>
