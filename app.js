@@ -21,3 +21,7 @@
 // localStorage.setItem(c9.id, JSON.stringify(c9));
 // localStorage.setItem(c10.id, JSON.stringify(c10));
 // localStorage.setItem(c11.id, JSON.stringify(c11));
+
+import CarController from "./js/controller.js";
+
+let obj = new CarController();

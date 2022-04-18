@@ -1,4 +1,4 @@
-import Car from "./car";
+import Car from "./car.js";
 
 export default class CarController {
     constructor() {
@@ -11,7 +11,7 @@ export default class CarController {
         let i = 1;
         while (localStorage.getItem(i)) {
             let obj = JSON.parse(localStorage.getItem(i));
-            this.list.push(new Car(obj.id, obj.model, obj.brand, obj.year, obj.km, onj.status, obj._pret));
+            this.list.push(new Car(obj.id, obj.model, obj.brand, obj.year, obj.km, obj.status, obj._pret));
             i++;
         }
     }
