@@ -325,6 +325,17 @@ export default class CarController {
         })
     }
 
+    getFilters(v1, v2, v3, v4) {
+        let vec = [];
+
+        for (let i = 0; i < v1.length; i++) {
+            if (v2.includes(v1[i]) && v3.includes(v1[i]) && v4.includes(v1[i])) vec.push(v1[i]);
+        }
+
+        if (vec.length != 0) return vec;
+        else return this.noResult();
+    }
+
     filt = (event) => {
         event.preventDefault;
 
@@ -345,5 +356,6 @@ export default class CarController {
         this.home.innerHTML = ``;
         this.home = document.querySelector('.filtering');
 
+        this.setCard(this.getFilters(this.resulBrand, this.resulPrice, this.resulYear, this.resulKm));
     }
 }
