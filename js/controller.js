@@ -263,4 +263,16 @@ export default class CarController {
 
         this.filtersBox.children[0].value = this.selectOpt.value;
     }
+
+    filt = (event) => {
+        event.preventDefault;
+        this.brand = document.getElementsByClassName('filters')[1].children[0];
+        this.fromPrc = document.getElementsByClassName('filters')[2].children[0];
+        this.toPrc = document.getElementsByClassName('filters')[3].children[0];
+        this.fromYear = document.getElementsByClassName('filters')[4].children[0];
+        this.toYear = document.getElementsByClassName('filters')[5].children[0];
+        this.fromKm = document.getElementsByClassName('filters')[6].children[0];
+        this.toKm = document.getElementsByClassName('filters')[7].children[0];
+        this.gasFlt = document.getElementsByClassName('filters')[8].children[0];
+    }
 }
