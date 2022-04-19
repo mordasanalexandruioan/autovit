@@ -264,8 +264,55 @@ export default class CarController {
         this.filtersBox.children[0].value = this.selectOpt.value;
     }
 
+    fltBrand = (brand) => {
+        return this.list.filter(e => {
+            if (brand == "") return this.list;
+            else return e.brand == brand;
+        });
+    }
+
+    fltModel = (model) => {
+        return this.list.filter(e => {
+            if (model == "") return this.list;
+            else return e.brand == model;
+        });
+    }
+
+    fltStatus = (status) => {
+        return this.list.filter(e => e.status == status);
+    }
+
+    fltPrice = (fromPrc, toPrc) => {
+        return this.list.filter(e => {
+            if (fromPrc == "") fromPrc = 0;
+            if (toPrc == "") toPrc = 250000;
+            return e._pret >= fromPrc && e._pret <= toPrc;
+        });
+    }
+
+    fltYear = (fromYear, toYear) => {
+        return this.list.filter(e => {
+            if (fromYear == "") fromYear = 1998;
+            if (toYear == "") toYear = 2022;
+            return e.year >= fromYear && e.year <= toYear;
+        });
+    }
+
+    fltKm = (fromKm, toKm) => {
+        return this.list.filter(e => {
+            if (fromKm == "") fromKm = 0;
+            if (toKm == "") toKm = 250000;
+            return e.km >= fromKm && e.km <= toKm;
+        });
+    }
+
+    exctractValue(input) {
+        return input.value;
+    }
+
     filt = (event) => {
         event.preventDefault;
+
         this.brand = document.getElementsByClassName('filters')[1].children[0];
         this.fromPrc = document.getElementsByClassName('filters')[2].children[0];
         this.toPrc = document.getElementsByClassName('filters')[3].children[0];
@@ -274,5 +321,10 @@ export default class CarController {
         this.fromKm = document.getElementsByClassName('filters')[6].children[0];
         this.toKm = document.getElementsByClassName('filters')[7].children[0];
         this.gasFlt = document.getElementsByClassName('filters')[8].children[0];
+
+        this.resulBrand = this.fltBrand(this.exctractValue(this.brand));
+        this.resulPrice = this.fltPrice(this.exctractValue(this.fromPrc), this.exctractValue(this.toPrc));
+        this.resulYear = this.fltYear(this.exctractValue(this.fromYear), this.exctractValue(this.toYear));
+        this.resulKm = this.fltYear(this.exctractValue(this.fromKm), this.exctractValue(this.toKm));
     }
 }
