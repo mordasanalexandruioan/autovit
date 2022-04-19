@@ -310,6 +310,14 @@ export default class CarController {
         return input.value;
     }
 
+    noResult = () => {
+        this.home.innerHTML = ``;
+        this.home = document.querySelector('.filtering');
+        return this.home.innerHTML = `
+        <h1>No cars found..</h1>
+        `;
+    }
+
     filt = (event) => {
         event.preventDefault;
 
@@ -326,5 +334,9 @@ export default class CarController {
         this.resulPrice = this.fltPrice(this.exctractValue(this.fromPrc), this.exctractValue(this.toPrc));
         this.resulYear = this.fltYear(this.exctractValue(this.fromYear), this.exctractValue(this.toYear));
         this.resulKm = this.fltYear(this.exctractValue(this.fromKm), this.exctractValue(this.toKm));
+
+        this.home.innerHTML = ``;
+        this.home = document.querySelector('.filtering');
+
     }
 }
