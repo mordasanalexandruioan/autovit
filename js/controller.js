@@ -318,6 +318,13 @@ export default class CarController {
         `;
     }
 
+    setCard(vec) {
+        this.home = document.querySelector('.filtering');
+        vec.forEach(e => {
+            this.home.innerHTML += e.toCard();
+        })
+    }
+
     filt = (event) => {
         event.preventDefault;
 
