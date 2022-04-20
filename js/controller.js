@@ -257,19 +257,6 @@ export default class CarController {
         this.btn.addEventListener('click', this.filt);
     }
 
-    setPage() {
-        this.home.innerHTML = ``;
-        this.home = document.querySelector('.filtering');
-
-        let text = "";
-
-        this.list.forEach(e => {
-            console.log(e);
-            text += e.toCard();
-        })
-
-        this.home.innerHTML = text;
-    }
 
     fltBrand = (brand) => {
         return this.list.filter(e => {
