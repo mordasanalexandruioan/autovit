@@ -257,6 +257,20 @@ export default class CarController {
         this.btn.addEventListener('click', this.filt);
     }
 
+    setPage() {
+        this.home.innerHTML = ``;
+        this.home = document.querySelector('.filtering');
+
+        let text = "";
+
+        this.list.forEach(e => {
+            console.log(e);
+            text += e.toCard();
+        })
+
+        this.home.innerHTML = text;
+    }
+
     eventSelect = (e) => {
         this.selectOpt = e.target;
         this.filtersBox = this.selectOpt.parentNode;
@@ -338,7 +352,6 @@ export default class CarController {
 
     filt = (event) => {
         event.preventDefault;
-
         this.brand = document.getElementsByClassName('filters')[1].children[0];
         this.fromPrc = document.getElementsByClassName('filters')[2].children[0];
         this.toPrc = document.getElementsByClassName('filters')[3].children[0];
