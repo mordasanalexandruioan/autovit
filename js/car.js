@@ -35,7 +35,7 @@ export default class Car {
             <span>${this.brand} ${this.model}</span>
             <span>${this.year} - ${this.km}</span>
             <span>${this.status}</span>
-            <span>${this.price} EUR</span>
+            <span>${this._price} EUR</span>
         </div>
     </div>`
     }

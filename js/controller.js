@@ -11,7 +11,7 @@ export default class CarController {
         let i = 1;
         while (localStorage.getItem(i)) {
             let obj = JSON.parse(localStorage.getItem(i));
-            this.list.push(new Car(obj.id, obj.model, obj.brand, obj.year, obj.km, obj.status, obj._pret));
+            this.list.push(new Car(obj.id, obj.model, obj.brand, obj.year, obj.km, obj.status, obj._price));
             i++;
         }
     }
@@ -225,7 +225,6 @@ export default class CarController {
             <button type="button" class="search-form-button">
                 Cauta anunturi
             </button>
-
         </form>
     </section>`
 
@@ -253,7 +252,8 @@ export default class CarController {
         this.gasFlt = document.getElementsByClassName('filters')[8];
         this.gasFlt.addEventListener('change', this.eventSelect);
 
-        this.btn = document.querySelector('search-form-button');
+        this.btn = document.querySelector('.search-form-button');
+
         this.btn.addEventListener('click', this.filt);
     }
 
@@ -269,13 +269,6 @@ export default class CarController {
         })
 
         this.home.innerHTML = text;
-    }
-
-    eventSelect = (e) => {
-        this.selectOpt = e.target;
-        this.filtersBox = this.selectOpt.parentNode;
-
-        this.filtersBox.children[0].value = this.selectOpt.value;
     }
 
     fltBrand = (brand) => {
@@ -300,7 +293,7 @@ export default class CarController {
         return this.list.filter(e => {
             if (fromPrc == "") fromPrc = 0;
             if (toPrc == "") toPrc = 250000;
-            return e._pret >= fromPrc && e._pret <= toPrc;
+            return e._price >= fromPrc && e._price <= toPrc;
         });
     }
 
@@ -320,7 +313,7 @@ export default class CarController {
         });
     }
 
-    exctractValue(input) {
+    extractValue(input) {
         return input.value;
     }
 
@@ -361,14 +354,21 @@ export default class CarController {
         this.toKm = document.getElementsByClassName('filters')[7].children[0];
         this.gasFlt = document.getElementsByClassName('filters')[8].children[0];
 
-        this.resulBrand = this.fltBrand(this.exctractValue(this.brand));
-        this.resulPrice = this.fltPrice(this.exctractValue(this.fromPrc), this.exctractValue(this.toPrc));
-        this.resulYear = this.fltYear(this.exctractValue(this.fromYear), this.exctractValue(this.toYear));
-        this.resulKm = this.fltYear(this.exctractValue(this.fromKm), this.exctractValue(this.toKm));
+        this.resultBrand = this.fltBrand(this.extractValue(this.brand));
+        this.resultPrice = this.fltPrice(this.extractValue(this.fromPrc), this.extractValue(this.toPrc));
+        this.resultYear = this.fltYear(this.extractValue(this.fromYear), this.extractValue(this.toYear));
+        this.resultKm = this.fltKm(this.extractValue(this.fromKm), this.extractValue(this.toKm));
 
         this.home.innerHTML = ``;
         this.home = document.querySelector('.filtering');
 
-        this.setCard(this.getFilters(this.resulBrand, this.resulPrice, this.resulYear, this.resulKm));
+        this.setCard(this.getFilters(this.resultBrand, this.resultPrice, this.resultYear, this.resultKm));
+    }
+
+    eventSelect = (e) => {
+        this.selectOpt = e.target;
+        this.filtersBox = this.selectOpt.parentNode;
+
+        this.filtersBox.children[0].value = this.selectOpt.value;
     }
 }
