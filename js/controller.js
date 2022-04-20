@@ -313,6 +313,7 @@ export default class CarController {
     }
 
     setCard(vec) {
+        this.home.innerHTML = ``;
         this.home = document.querySelector('.filtering');
         vec.forEach(e => {
             this.home.innerHTML += e.toCard();
@@ -345,9 +346,6 @@ export default class CarController {
         this.resultPrice = this.fltPrice(this.extractValue(this.fromPrc), this.extractValue(this.toPrc));
         this.resultYear = this.fltYear(this.extractValue(this.fromYear), this.extractValue(this.toYear));
         this.resultKm = this.fltKm(this.extractValue(this.fromKm), this.extractValue(this.toKm));
-
-        this.home.innerHTML = ``;
-        this.home = document.querySelector('.filtering');
 
         this.setCard(this.getFilters(this.resultBrand, this.resultPrice, this.resultYear, this.resultKm));
     }
