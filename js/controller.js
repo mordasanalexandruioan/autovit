@@ -26,7 +26,7 @@ export default class CarController {
         <form>
             <legend>Ce cauti?</legend>
 
-            <div class="filters">
+            <div class="filters body">
                 <input type="text" placeholder="Tip Caroserie" aria-autocomplete="list">
                 <select>
                     <option disabled selected value></option>
@@ -41,7 +41,7 @@ export default class CarController {
                 </select>
             </div>
 
-            <div class="filters">
+            <div class="filters brand">
                 <input type="text" placeholder="Marca" aria-autocomplete="list">
                 <select name="user_selection">
                    <option disabled selected value></option>
@@ -57,13 +57,13 @@ export default class CarController {
                </select>
             </div>
 
-            <input type="text" placeholder="Model" aria-autocomplete="list" disabled>
+            <input type="text" class="model" placeholder="Model" aria-autocomplete="list" disabled>
 
-            <input type="text" placeholder="Generatie" aria-autocomplete="list" disabled>
+            <input type="text" class="generation" placeholder="Generatie" aria-autocomplete="list" disabled>
 
 
             <label>Pret</label>
-            <div class="filter pret">
+            <div class="filter price">
                 <div class="filters">
                     <input type="text" placeholder="de la">
                     <select>
@@ -104,7 +104,7 @@ export default class CarController {
             </div>
 
             <label>Anul</label>
-            <div class="filter an">
+            <div class="filter year">
                 <div class="filters">
                     <input type="text" placeholder="de la">
                     <select>
@@ -210,7 +210,7 @@ export default class CarController {
 
             </div>
 
-            <div class="filters">
+            <div class="filters gas">
                 <input type="text" placeholder="Combustibil" aria-autocomplete="list">
                 <select>
                 <option disabled selected value></option>
