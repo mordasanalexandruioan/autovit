@@ -57,12 +57,12 @@ export default class CarController {
                </select>
             </div>
 
-            <input type="text" class="model" placeholder="Model" aria-autocomplete="list" disabled>
+            <input type="text" class="modell" placeholder="Model" aria-autocomplete="list" disabled>
 
             <input type="text" class="generation" placeholder="Generatie" aria-autocomplete="list" disabled>
 
 
-            <label>Pret</label>
+            <label class="lprice">Pret</label>
             <div class="filter price">
                 <div class="filters">
                     <input type="text" placeholder="de la">
@@ -103,7 +103,7 @@ export default class CarController {
 
             </div>
 
-            <label>Anul</label>
+            <label class="lyear">Anul</label>
             <div class="filter year">
                 <div class="filters">
                     <input type="text" placeholder="de la">
@@ -172,7 +172,7 @@ export default class CarController {
             </div>
 
 
-            <label>Km</label>
+            <label class="lkm">Km</label>
             <div class="filter km">
                 <div class="filters">
                     <input type="text" placeholder="de la">
@@ -210,6 +210,7 @@ export default class CarController {
 
             </div>
 
+            <label class="lgas">Combustibil</label>
             <div class="filters gas">
                 <input type="text" placeholder="Combustibil" aria-autocomplete="list">
                 <select>

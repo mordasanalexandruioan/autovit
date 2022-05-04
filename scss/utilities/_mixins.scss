@@ -6,6 +6,14 @@
     align-items: $align;
 }
 
+@mixin gridy($disp:grid, $col:null, $row:null, $gap:null, $area:null) {
+    display: grid;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    grid-template-areas: $area;
+    grid-gap: $gap;
+}
+
 @mixin mq($break) {
     $value: map-get($map: $breakpoints, $key: $break);
     $sm: map-get($map: $breakpoints, $key: 'sm');
