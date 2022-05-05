@@ -28,7 +28,8 @@ export default class Car {
     }
 
     toCard() {
-        return `<div class="card">
+        if (window.innerWidth <= 768)
+            return `<div class="card">
         <img src="https://via.placeholder.com/150">
 
         <div class="details">
@@ -37,6 +38,18 @@ export default class Car {
             <span>${this.status}</span>
             <span>${this._price} EUR</span>
         </div>
-    </div>`
+    </div>`;
+        else
+            return `<div class="card">
+        <img src="https://via.placeholder.com/230">
+
+        <div class="details">
+            <span>${this.brand} ${this.model}</span>
+            <span>${this.year} - ${this.km} KM</span>
+            <span>${this.status}</span>
+            <span>${this._price} EUR</span>
+        </div>
+    </div>`;
+
     }
 }
