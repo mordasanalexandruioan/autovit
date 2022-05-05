@@ -81,8 +81,60 @@ body {
   border-radius: 0.3em;
 }
 
+.intro .duster,
+.intro .s60,
+.intro .polo,
+.intro .octv,
+.intro .mondeo,
+.intro .kodiaq,
+.intro .trg,
+.intro .leon {
+  display: none;
+}
+@media (min-width: 768px) {
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "s500 s500 duster polo" "s500 s500 s60 trg";
+  }
+  .intro .s500 {
+    grid-area: s500;
+  }
+  .intro .duster {
+    grid-area: duster;
+    display: table;
+  }
+  .intro .s60 {
+    grid-area: s60;
+    display: table;
+  }
+  .intro .trg {
+    grid-area: trg;
+    display: table;
+  }
+  .intro .polo {
+    grid-area: polo;
+    display: table;
+  }
+}
+@media (min-width: 1024px) {
+  .intro {
+    grid-template-areas: "s500 s500 duster polo" "s500 s500 s60 trg" "leon mondeo octv kodiaq";
+  }
+  .intro .leon {
+    grid-area: leon;
+    display: table;
+  }
+  .intro .octv,
+.intro .kodiaq,
+.intro .mondeo {
+    display: table;
+  }
+}
 .intro img {
   width: 100%;
+  height: 100%;
 }
 
 form {

@@ -19,7 +19,15 @@ export default class CarController {
     setHome() {
         this.home = document.querySelector('.home');
         this.home.innerHTML = `<section class="intro">
-        <img src="/img/mercedes.jpg" alt="">
+        <img src="/img/mercedes.jpg" class="s500">
+        <img src="/img/daciaDuster.jpg" class="duster">
+        <img src="/img/fordMondeo.jpg" class="mondeo">
+        <img src="/img/skodaOctavia.jpg" class="octv">
+        <img src="/img/volvos60.jpg" class="s60">
+        <img src="/img/vwTrg.jpg" class="trg">
+        <img src="/img/skodeKodiaq.jpg" class="kodiaq">
+        <img src="/img/vwPolo.jpg" class="polo">
+        <img src="/img/leon.jpg" class="leon">
     </section>
 
     <section class="form-section">
